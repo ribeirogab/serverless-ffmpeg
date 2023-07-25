@@ -8,3 +8,6 @@ jspm_packages
 # Scripts directory
 scripts/**/*
 !scripts/*.sh
+
+# FFmpeg layer
+layers/ffmpeg/bin/**/*
