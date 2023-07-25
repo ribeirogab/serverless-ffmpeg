@@ -1,5 +1,5 @@
 #!/bin/bash
-LAYERS_PATH=../layers
+LAYERS_PATH=./layers
 
 # Download and unpack the latest static release build of FFmpeg for Linux amd64 from https://johnvansickle.com/ffmpeg/
 wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz

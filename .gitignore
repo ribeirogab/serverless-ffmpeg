@@ -11,3 +11,6 @@ scripts/**/*
 
 # FFmpeg layer
 layers/ffmpeg/bin/**/*
+
+# FFmpeg downloaded files
+ffmpeg-*-amd64-static*
