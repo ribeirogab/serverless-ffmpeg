@@ -1,0 +1,45 @@
+service: serverless-ffmpeg
+frameworkVersion: '3'
+
+custom:
+  functionName: serverless-ffmpeg
+  stackName: ${self:custom.functionName}-stack
+
+provider:
+  name: aws
+  region: us-east-2
+  runtime: nodejs18.x
+  timeout: 300
+  stage: prod
+  stackName: ${self:custom.stackName}
+
+package:
+  individually: true
+  patterns:
+    - "!node_modules/**"
+
+functions:
+  function1:
+    handler: src/index.handler
+    name: ${self:custom.functionName}-lambda
+    layers:
+      - !Ref DependenciesLambdaLayer
+      - !Ref FfmpegLambdaLayer
+    package:
+      patterns:
+        - "!./**"
+        - src/**
+        - example.jpg
+
+layers:
+  dependencies:
+    name: ${self:custom.functionName}-dependencies-layer
+    path: layers/dependencies
+    compatibleRuntimes:
+      - nodejs18.x
+
+  ffmpeg:
+    name: ${self:custom.functionName}-ffmpeg-layer
+    path: layers/ffmpeg
+    compatibleRuntimes:
+      - nodejs18.x
