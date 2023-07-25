@@ -48,7 +48,7 @@ chmod +x ./create-ffmpeg-layer.sh
 ```
 
 *when the script is finished running, the folder structure should look like this:*
-![[Pasted image 20230725154207.png]]
+![folder structure](https://i.ibb.co/bBvmWXF/Screenshot-from-2023-07-25-15-40-44.png)
 
 4. Add layer in `serverless.yml` file
 
